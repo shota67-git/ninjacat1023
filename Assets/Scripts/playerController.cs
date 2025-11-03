@@ -21,6 +21,9 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            SceneManager.LoadScene("Menu");
+        }
         if (Input.GetKeyDown(KeyCode.Space))  //«öªÅ¥ÕÁä¸õÅD
         {
             rigi2d.AddForce(transform.up * jumpForce);
