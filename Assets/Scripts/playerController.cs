@@ -24,8 +24,8 @@ public class playerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)) {
             SceneManager.LoadScene("Menu");
         }
-        if (Input.GetKeyDown(KeyCode.Space))  //按空白鍵跳躍
-        {
+        if (Input.GetKeyDown(KeyCode.Space) && rigi2d.velocity.y == 0)  //按空白鍵跳躍
+        {            
             rigi2d.AddForce(transform.up * jumpForce);
         }
         float speedx=Mathf.Abs(rigi2d.velocity.x);//計算移動速度
@@ -46,5 +46,9 @@ public class playerController : MonoBehaviour
 
         animator.speed = speedx/2.0f;
 
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        SceneManager.LoadScene("ch6end");
     }
 }

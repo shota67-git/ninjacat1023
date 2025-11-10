@@ -37,7 +37,7 @@ public class hp : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)) {
             SceneManager.LoadScene("Menu");
         }
-        remaintime = 5 - Time.time;
+        remaintime = 10 - Time.time;
         rtime.text = remaintime.ToString("F1");
         Debug.Log(hpP+ " "+ remaintime);
         if (remaintime < 0 && hpP >= 60) { 
